@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Tip calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        label{
+            display: block;
+        }
+
+        .modal-bg{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #000000c2;
+            height: 100vh;
+            width: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content{
+            background-color: #fff;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        #tip-form{
+            padding: 50px;
+        }
+        
+        .selectlabel{
+            padding: 10px 0;
+        }
+
+        .peoplelabel{
+            padding-bottom: 20px;
+        }
+
+        #tip-form label{
+            padding-bottom: 2px;
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(71, 128, 71);
+        }
+
+        input{
+            /* display: flex; */
+            background-color: transparent;
+            text-align: end;
+            width: 100%;
+            outline: none;
+            border: none;
+        }
+        
+        .input-div{
+            border-radius: 8px;
+            padding: 9px;
+            background-color: rgb(175, 219, 175);
+            display: inline-flex;
+        }
+
+        #body{
+            background-color: rgb(2, 41, 25);
+            padding: 60px 32px 0;
+            width: 35%;
+            height: 70vh;
+            border-radius: 5px;
+            /* align-items: center;
+            align-content: center;
+            justify-item: center; */
+            /* text-align: center; */
+        }
+
+        .tipAmnt{
+            font-size: 15px;
+            align-items: center;
+            color: rgb(120, 158, 120);
+            display: flex;
+            gap: 60px;
+        }
+
+        .totalPple{
+            font-size: 15px;
+            align-items: center;
+            color: rgb(120, 156, 120);
+            padding: 50px 0 !important;
+            display: flex;
+            gap: 100px;                                     
+        }
+
+        .tipAmnt p, .totalPple p{
+            font-size: 40px;
+            color: rgb(120, 158, 120);
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(175, 219, 175);
+            border: none;
+            border-radius: 9px;
+        }
+
+        .sumbtn{
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .rstbtn{
+            font-weight: 600;
+        }
+
+        .ri-money-dollar-circle-fill, .ri-percent-fill, .ri-user-fill{
+            color: rgb(81, 107, 81);
+            font-size: 15px;
+        }
+
+        #body i{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="modal-bg">
+        <div class="modal-content">
+            <p class="error-message"></p>
+            <button class="btn">Ok</button>
+        </div>
+    </div>
+
+    <section id="tip-form">
+        <div class="billlabel">
+            <label>Bill</label>
+            <div class="input-div">
+                <i class="ri-money-dollar-circle-fill"></i>
+                <input type="text" class="bill" placeholder="0"> 
+            </div>
+         </div>
+         <div class="selectlabel">
+             <label>Select Tip %</label>
+             <div class="input-div">
+                <i class="ri-percent-fill"></i>
+                <input type="text" class="select" placeholder="0"> 
+             </div>
+          </div>
+          <div class="peoplelabel">
+             <label>Number of people</label>
+             <div class="input-div">
+                <i class="ri-user-fill"></i>
+                <input type="text" class="people" placeholder="0"> 
+             </div>
+          </div>
+    </section>
+        
+    <section id="body">
+        <div class="body1">
+            <div class="tipAmnt">
+                <h4>Tip Amount/person</h4>
+                <div>
+                    <!-- <i class="ri-money-dollar-circle-fill"></i> -->
+                    <p class="tip-per-person">0.00</p>
+                </div>
+            </div>
+            <div class="totalPple">
+                <h4>Total/person</h4>
+                <div>
+                    <!-- <i class="ri-money-dollar-circle-fill"></i> -->
+                    <p class="total-per-person">0.00</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="sumbtn">SUM</button>
+        <button class="rstbtn">RESET</button>
+    </section>
+    
+    
+
+    <script src="/main.js"></script>
+</body>
+</html>
